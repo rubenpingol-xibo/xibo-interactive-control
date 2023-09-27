@@ -20,7 +20,7 @@
  */
 window.xiboIC = (function() {
   'use strict';
-  console.log({xiboICTargetId});
+
   // Private vars
   const _lib = {
     protocol: '', // default protocol
