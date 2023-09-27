@@ -20,7 +20,7 @@
  */
 window.xiboIC = (function() {
   'use strict';
-
+  console.log({xiboICTargetId});
   // Private vars
   const _lib = {
     protocol: '', // default protocol
@@ -429,6 +429,12 @@ window.xiboIC = (function() {
     ) {      // Get target id from the request option or from the global lib var
       const id = (typeof targetId != 'undefined') ? targetId : _lib.targetId;
       const reportKey = (typeof key != 'undefined') ? key : 'xiboIC_' + id;
+
+      if (typeof _lib.targetId == 'undefined' && typeof targetId != 'undefined') {
+        _lib.targetId = targetId;
+      }
+
+      console.log({_lib});
 
       _lib.makeRequest(
           '/fault',
